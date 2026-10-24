@@ -1,0 +1,8 @@
+@model MaSV_LTW.Models.Product
+@{ ViewBag.Title = "Thêm sản phẩm"; }
+<h1>Thêm sản phẩm</h1>
+@using (Html.BeginForm("Create", "Products", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+ @Html.AntiForgeryToken()
+ @Html.Partial("_ProductForm", Model)
+}
+<p>@Html.ActionLink("Quay lại danh sách", "Index")</p>

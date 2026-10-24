@@ -1,0 +1,4 @@
+@model MaSV_LTW.Models.Product
+@{ ViewBag.Title = Model.ProductName; }
+<p class="breadcrumbs"><a href="@Url.Action("Index")">Sản phẩm</a> / @Model.ProductName</p>
+<div class="product-detail"><div class="detail-image"><img src="@Url.Content("~/Content/no-image.svg")" alt="@Model.ProductName"/></div><div><p class="eyebrow">@(Model.Category==null ? "SẢN PHẨM" : Model.Category.CategoryName)</p><h1>@Model.ProductName</h1><h2>@Model.ProductPrice.ToString("N0") đ</h2><p>@Model.ProductDecription</p><p><a class="detail-link" href="@Url.Action("Index")">← Quay lại danh sách</a></p></div></div>

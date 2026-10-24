@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0" DefaultTargets="Build">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+  <PropertyGroup><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProjectGuid>{4F1BEA32-23D1-4D5F-AB69-125EF36045B1}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>Properties</AppDesignerFolder><RootNamespace>MaSV_LTW</RootNamespace><AssemblyName>MaSV_LTW</AssemblyName><TargetFrameworkVersion>v4.8</TargetFrameworkVersion><MvcBuildViews>false</MvcBuildViews><UseIISExpress>true</UseIISExpress><IISExpressSSLPort/><IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication><IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication><IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode></PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>bin\</OutputPath><DefineConstants>DEBUG;TRACE</DefineConstants><WarningLevel>4</WarningLevel></PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' "><DebugType>pdbonly</DebugType><Optimize>true</Optimize><OutputPath>bin\</OutputPath><DefineConstants>TRACE</DefineConstants><WarningLevel>4</WarningLevel></PropertyGroup>
+  <ItemGroup><Reference Include="System"/><Reference Include="System.Core"/><Reference Include="System.Data"/><Reference Include="System.ComponentModel.DataAnnotations"/><Reference Include="System.Web"/><Reference Include="System.Web.Extensions"/><Reference Include="System.Web.Routing"/><Reference Include="System.Xml"/><Reference Include="System.Configuration"/><Reference Include="System.Web.Abstractions"/><Reference Include="System.Data.DataSetExtensions"/>
+    <Reference Include="EntityFramework"><HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath></Reference><Reference Include="EntityFramework.SqlServer"><HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath></Reference>
+    <Reference Include="System.Web.Mvc"><HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath></Reference><Reference Include="System.Web.Razor"><HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath></Reference><Reference Include="System.Web.WebPages"><HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath></Reference><Reference Include="System.Web.WebPages.Razor"><HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath></Reference><Reference Include="Microsoft.Web.Infrastructure"><HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath></Reference></ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs"/>
+    <Compile Include="App_Start\RouteConfig.cs"/>
+    <Compile Include="ViewModels\ProductListViewModel.cs"/>
+    <Compile Include="Models\MyStoreContext.cs"/>
+    <Compile Include="Models\Entities.cs"/>
+    <Compile Include="Controllers\HomeController.cs"/>
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs"/>
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs"/>
+  <Compile Include="Areas\Admin\Controllers\AccountController.cs"/><Compile Include="Areas\Admin\Controllers\CategoriesController.cs"/><Compile Include="Areas\Admin\Controllers\CustomersController.cs"/><Compile Include="Areas\Admin\Controllers\OrdersController.cs"/><Compile Include="Areas\Admin\Controllers\ProductsController.cs"/><Compile Include="Areas\Admin\Filters\AdminOnlyAttribute.cs"/></ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config"/>
+    <Content Include="Content\no-image.svg"/>
+    <Content Include="Content\site.css"/>
+    <Content Include="Views\Web.config"/>
+    <Content Include="Views\_ViewStart.cshtml"/>
+    <Content Include="Views\Home\Detail.cshtml"/>
+    <Content Include="Views\Home\Index.cshtml"/>
+    <Content Include="Views\Shared\_Layout.cshtml"/>
+    <Content Include="Areas\Admin\Views\Web.config"/>
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml"/>
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml"/>
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml"/>
+    <None Include="packages.config"/>
+  <Content Include="Areas\Admin\Views\Account\Index.cshtml"/><Content Include="Areas\Admin\Views\Account\Login.cshtml"/><Content Include="Areas\Admin\Views\Categories\Create.cshtml"/><Content Include="Areas\Admin\Views\Categories\Delete.cshtml"/><Content Include="Areas\Admin\Views\Categories\Details.cshtml"/><Content Include="Areas\Admin\Views\Categories\Edit.cshtml"/><Content Include="Areas\Admin\Views\Categories\Index.cshtml"/><Content Include="Areas\Admin\Views\Categories\_CategoryForm.cshtml"/><Content Include="Areas\Admin\Views\Customers\Details.cshtml"/><Content Include="Areas\Admin\Views\Customers\Index.cshtml"/><Content Include="Areas\Admin\Views\Orders\Details.cshtml"/><Content Include="Areas\Admin\Views\Orders\Index.cshtml"/><Content Include="Areas\Admin\Views\Products\Create.cshtml"/><Content Include="Areas\Admin\Views\Products\Delete.cshtml"/><Content Include="Areas\Admin\Views\Products\Details.cshtml"/><Content Include="Areas\Admin\Views\Products\Edit.cshtml"/><Content Include="Areas\Admin\Views\Products\Index.cshtml"/><Content Include="Areas\Admin\Views\Products\_ProductForm.cshtml"/></ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+  <PropertyGroup><VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">17.0</VisualStudioVersion><VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath></PropertyGroup>
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="Exists('$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets')"/>
+</Project>

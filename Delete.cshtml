@@ -1,0 +1,2 @@
+@model MaSV_LTW.Models.Product
+@{ViewBag.Title="Xóa sản phẩm";}<h1>Xóa sản phẩm?</h1><p>@Model.ProductName</p>@Html.ValidationSummary(true,"",new{@class="text-danger"})@using(Html.BeginForm()){@Html.AntiForgeryToken()<button type="submit">Xác nhận xóa</button>}@Html.ActionLink("Quay lại","Index")

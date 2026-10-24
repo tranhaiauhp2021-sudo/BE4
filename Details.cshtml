@@ -1,0 +1,6 @@
+@model MaSV_LTW.Models.Product
+@{ ViewBag.Title="Chi tiết sản phẩm"; }
+<h1>Chi tiết sản phẩm</h1>
+<dl class="dl-horizontal"><dt>Mã</dt><dd>@Model.ProductID</dd><dt>Tên</dt><dd>@Model.ProductName</dd><dt>Danh mục</dt><dd>@(Model.Category == null ? "" : Model.Category.CategoryName)</dd><dt>Mô tả</dt><dd>@Model.ProductDecription</dd><dt>Giá</dt><dd>@Model.ProductPrice.ToString("N0") đ</dd></dl>
+@if (!String.IsNullOrWhiteSpace(Model.ProductImage)) { <img src="@Url.Content(Model.ProductImage)" style="max-width:300px;max-height:300px;object-fit:contain" alt="Ảnh sản phẩm" /> }
+<p>@Html.ActionLink("Sửa", "Edit", new { id=Model.ProductID }) | @Html.ActionLink("Về danh sách", "Index")</p>

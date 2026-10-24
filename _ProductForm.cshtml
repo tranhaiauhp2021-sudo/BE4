@@ -1,0 +1,9 @@
+@model MaSV_LTW.Models.Product
+@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+<div class="form-group"><label>Danh mục</label>@Html.DropDownList("CategoryID", null, "-- Chọn danh mục --", new { @class = "form-control", required = "required" })@Html.ValidationMessageFor(m => m.CategoryID)</div>
+<div class="form-group"><label>Tên sản phẩm</label>@Html.TextBoxFor(m => m.ProductName, new { @class = "form-control", required = "required" })@Html.ValidationMessageFor(m => m.ProductName)</div>
+<div class="form-group"><label>Mô tả sản phẩm</label>@Html.TextAreaFor(m => m.ProductDecription, 5, 50, new { @class = "form-control", required = "required" })@Html.ValidationMessageFor(m => m.ProductDecription)</div>
+<div class="form-group"><label>Giá (VNĐ)</label>@Html.TextBoxFor(m => m.ProductPrice, new { @class = "form-control", type = "number", min = "0", step = "0.01", required = "required" })@Html.ValidationMessageFor(m => m.ProductPrice)</div>
+<div class="form-group"><label>Chọn ảnh sản phẩm (JPG/PNG/WebP, tối đa 5MB)</label><input type="file" name="imageFile" class="form-control" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" /></div>
+@if (!string.IsNullOrWhiteSpace(Model.ProductImage)) { <p>Ảnh hiện tại: <img src="@Url.Content(Model.ProductImage)" alt="Ảnh sản phẩm" style="width:120px;max-height:130px;object-fit:contain" /></p> }
+<button type="submit" class="btn btn-primary">Lưu sản phẩm</button>
